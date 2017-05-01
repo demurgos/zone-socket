@@ -5,6 +5,8 @@ import { AppComponent } from './app.component';
 import { AppModule } from './app.module';
 import { TransferState } from '../modules/transfer-state/transfer-state';
 import { BrowserModule } from '@angular/platform-browser';
+import {ServerZoneSocket} from "../modules/zone-socket/server-zone-socket";
+import {ServerZoneSocketModule} from "../modules/zone-socket/zone-socket.server.module";
 
 export function onBootstrap(appRef: ApplicationRef, transferState: TransferState) {
   return () => {
@@ -36,6 +38,7 @@ export function onBootstrap(appRef: ApplicationRef, transferState: TransferState
     }),
     ServerModule,
     ServerTransferStateModule,
+    ServerZoneSocketModule,
     AppModule
   ]
 })
